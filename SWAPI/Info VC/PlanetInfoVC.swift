@@ -66,17 +66,17 @@ class PlanetInfoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let getFilmsCompletion: () -> Void = {
-            DispatchQueue.global(qos: .utility).async {
-                self.getFilms()
-            }
-        }
-        
-        let getResidentsCompletion: () -> Void = {
-            DispatchQueue.global(qos: .utility).async {
-                self.getResidents()
-            }
-        }
+//        let getFilmsCompletion: () -> Void = {
+//            DispatchQueue.global(qos: .utility).async {
+//                self.getFilms()
+//            }
+//        }
+//
+//        let getResidentsCompletion: () -> Void = {
+//            DispatchQueue.global(qos: .utility).async {
+//                self.getResidents()
+//            }
+//        }
         
         
 //        reloadDataAsCompletion(completionHandler: getResidentsCompletion)
