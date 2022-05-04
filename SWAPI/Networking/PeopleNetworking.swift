@@ -7,11 +7,11 @@
 
 import Foundation
 
-func requestPeopleNetworkResponse (stringURL: String, completion: @escaping (PeopleNetworkResponse) -> Void) {
+func requestCharacterNetworkResponse (stringURL: String, completion: @escaping (CharacterNetworkResponse) -> Void) {
     
     Networking.fetchData(urlString: stringURL) { data in
         do {
-            let result = try DecoderSingleton.decoder.decode(PeopleNetworkResponse.self, from: data)
+            let result = try DecoderSingleton.decoder.decode(CharacterNetworkResponse.self, from: data)
             completion(result)
         } catch {
 

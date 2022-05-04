@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct PeopleNetworkResponse: Codable {
+struct CharacterNetworkResponse: Codable {
     let name, height, mass, hairColor: String
     let skinColor, eyeColor, birthYear, gender: String
     let homeworld: String
@@ -28,15 +28,13 @@ struct PeopleNetworkResponse: Codable {
     }
 }
 
-func peopleResponseConvert(inc: PeopleNetworkResponse) -> People {
-    
-    
-    
-    
-    let outc = People(name: inc.name, height: inc.height, mass: inc.mass, hairColor: inc.hairColor, skinColor: inc.skinColor, eyeColor: inc.eyeColor, birthYear: inc.birthYear, gender: inc.gender, homeworld: inc.homeworld, films: inc.films, species: inc.species, vehicles: inc.vehicles, starships: inc.starships, created: inc.created, edited: inc.edited, url: inc.url)
-    
-    return outc
+struct CharacterListNetworkResponse: Codable {
+    let count: Int
+    let next: String
+    let previous: String?
+    let results: [CharacterNetworkResponse]
 }
+
 
 
 

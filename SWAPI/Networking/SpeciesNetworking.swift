@@ -6,7 +6,7 @@
 //
 
 import Foundation
-func requestStarshipNetworkResponse (stringURL: String, completion: @escaping (SpeciesNetworkResponse) -> Void) {
+func requestSpeciesNetworkResponse (stringURL: String, completion: @escaping (SpeciesNetworkResponse) -> Void) {
     
     Networking.fetchData(urlString: stringURL) { data in
         do {

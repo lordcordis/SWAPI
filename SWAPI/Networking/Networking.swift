@@ -29,8 +29,3 @@ class Networking {
 }
 
 
-enum EntityType {
-    case person
-    case planets
-    case films
-}

@@ -12,13 +12,12 @@ class PersonInfoTableViewController: UITableViewController {
     
     let personTableViewCell = "personTableViewCell"
     
-    var person: People!
+    var person: CharacterNetworkResponse!
     var homeworldPlanet: PlanetNetworkResponse?
     
     var films: [FilmNetworkResponse] = [] {
         didSet{
             DispatchQueue.main.async {
-                print("FILM APPENDED")
                 self.tableView.reloadData()
             }
         }
@@ -50,10 +49,7 @@ class PersonInfoTableViewController: UITableViewController {
         
         
         for filmUrl in person.films {
-//            print(filmUrl)
-            
             requestFilmNetworkResponse(stringURL: filmUrl) { film in
-                print(filmDescription(film: film))
                 self.films.append(film)
             }
             
@@ -116,14 +112,16 @@ class PersonInfoTableViewController: UITableViewController {
         
         var content = cell.defaultContentConfiguration()
         
-        let info = peopleDescription(people: person)
+        let info = characterDescription(character: person)
         
         if indexPath == [0,0] {
             content.text = info
         } else if indexPath.section == 1 {
             content.text = homeworldName
+            cell.accessoryType = .disclosureIndicator
         } else if indexPath.section == 2{
             content.text = films[indexPath.row].title
+            cell.accessoryType = .disclosureIndicator
         }
     
         

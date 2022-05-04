@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PlanetsListTableViewController: UITableViewController {
+class PlanetsListViewController: UITableViewController {
     
     
     
@@ -35,6 +35,7 @@ class PlanetsListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         
@@ -88,6 +89,7 @@ class PlanetsListTableViewController: UITableViewController {
         let currentPlanet = planets[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = currentPlanet.name
+        cell.accessoryType = .disclosureIndicator
         
         cell.contentConfiguration = content
         

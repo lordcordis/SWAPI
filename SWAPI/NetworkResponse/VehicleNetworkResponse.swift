@@ -26,3 +26,10 @@ struct VehicleNetworkResponse: Codable {
         case vehicleClass = "vehicle_class"
     }
 }
+
+struct VehicleListNetworkResponse: Codable {
+    let count: Int
+    let next: String
+    let previous: String?
+    let results: [VehicleNetworkResponse]
+}

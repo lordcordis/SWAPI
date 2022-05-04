@@ -27,19 +27,14 @@ struct FilmNetworkResponse: Codable {
     }
 }
 
-func filmDescription (film: FilmNetworkResponse) -> String {
-    let output = """
-    title: \(film.title)\n
-    episodeID: \(film.episodeID)\n
-    openingCrawl: \(film.openingCrawl)\n
-    director: \(film.director)\n
-    producer: \(film.producer)\n
-    releaseDate: \(film.releaseDate)\n
-    characters: \(film.characters)\n
-    planets: \(film.planets)\n
-    starships: \(film.planets)\n
-    vehicles: \(film.planets)\n
-    species: \(film.species)\n
-    """
-    return output
+struct FilmListNetworkResponse: Codable {
+    let count: Int
+    let next: String
+    let previous: String?
+    let results: [FilmNetworkResponse]
 }
+
+
+
+
+

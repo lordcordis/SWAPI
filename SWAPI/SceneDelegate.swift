@@ -24,7 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         
-        let mainVC = PlanetsListTableViewController()
+        
+        
+        let mainVC = PlanetsListViewController()
         let navController = UINavigationController(rootViewController: mainVC)
         navController.navigationBar.tintColor = .systemPink
         
